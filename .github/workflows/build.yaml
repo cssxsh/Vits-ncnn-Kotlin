@@ -1,0 +1,88 @@
+name: "build"
+on:
+  push:
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    paths-ignore:
+      - '**/*.md'
+
+permissions:
+  contents: write
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: robinraju/release-downloader@v1.7
+        with:
+          repository: "Tencent/ncnn"
+          latest: true
+          fileName: "ncnn-*-full-source.zip"
+          out-file-path: "~/Downloads"
+
+      - name: Unzip
+        shell: bash
+        run: |
+          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          ls -l ./native/ncnn
+
+  linux-build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: robinraju/release-downloader@v1.7
+        with:
+          repository: "Tencent/ncnn"
+          latest: true
+          fileName: "ncnn-*-full-source.zip"
+          out-file-path: "~/Downloads"
+
+      - name: Unzip
+        shell: bash
+        run: |
+          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          ls -l ./native/ncnn
+
+  android-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: robinraju/release-downloader@v1.7
+        with:
+          repository: "Tencent/ncnn"
+          latest: true
+          fileName: "ncnn-*-full-source.zip"
+          out-file-path: "~/Downloads"
+
+      - name: Unzip
+        shell: bash
+        run: |
+          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          ls -l ./native/ncnn
+
+  macos-build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: robinraju/release-downloader@v1.7
+        with:
+          repository: "Tencent/ncnn"
+          latest: true
+          fileName: "ncnn-*-full-source.zip"
+          out-file-path: "~/Downloads"
+
+      - name: Unzip
+        shell: bash
+        run: |
+          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          ls -l ./native/ncnn
