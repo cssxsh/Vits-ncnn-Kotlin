@@ -21,13 +21,13 @@ jobs:
         with:
           repository: "Tencent/ncnn"
           latest: true
-          fileName: "ncnn-*-full-source.zip"
+          fileName: "ncnn-20221128-full-source.zip"
           out-file-path: "~/Downloads"
 
       - name: Unzip
         shell: bash
         run: |
-          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          unzip ~/Downloads/ncnn-20221128-full-source.zip -d ./native/ncnn
           ls -l ./native/ncnn
 
   linux-build:
@@ -40,13 +40,13 @@ jobs:
         with:
           repository: "Tencent/ncnn"
           latest: true
-          fileName: "ncnn-*-full-source.zip"
+          fileName: "ncnn-20221128-full-source.zip"
           out-file-path: "~/Downloads"
 
       - name: Unzip
         shell: bash
         run: |
-          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          unzip ~/Downloads/ncnn-20221128-full-source.zip -d ./native/ncnn
           ls -l ./native/ncnn
 
   android-build:
@@ -59,13 +59,13 @@ jobs:
         with:
           repository: "Tencent/ncnn"
           latest: true
-          fileName: "ncnn-*-full-source.zip"
+          fileName: "ncnn-20221128-full-source.zip"
           out-file-path: "~/Downloads"
 
       - name: Unzip
         shell: bash
         run: |
-          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          unzip ~/Downloads/ncnn-20221128-full-source.zip -d ./native/ncnn
           ls -l ./native/ncnn
 
   macos-build:
@@ -78,11 +78,11 @@ jobs:
         with:
           repository: "Tencent/ncnn"
           latest: true
-          fileName: "ncnn-*-full-source.zip"
+          fileName: "ncnn-20221128-full-source.zip"
           out-file-path: "~/Downloads"
 
       - name: Unzip
         shell: bash
         run: |
-          unzip ~/Downloads/ncnn-*-full-source.zip -d ./native/ncnn
+          unzip ~/Downloads/ncnn-20221128-full-source.zip -d ./native/ncnn
           ls -l ./native/ncnn
