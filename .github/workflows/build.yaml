@@ -25,9 +25,10 @@ jobs:
 
       - name: Unzip
         shell: bash
+        working-directory: ./native
         run: |
-          unzip ncnn-*-windows-vs2022.zip -d ./native/ncnn
-          ls -l ./native/ncnn
+          unzip ncnn-*-windows-vs2022.zip
+          mv ncnn-*-windows-vs2022 ncnn
 
   linux-build:
     runs-on: ubuntu-latest
@@ -43,9 +44,10 @@ jobs:
 
       - name: Unzip
         shell: bash
+        working-directory: ./native
         run: |
-          unzip ncnn-*-ubuntu-2204.zip -d ./native/ncnn
-          ls -l ./native/ncnn
+          unzip ncnn-*-ubuntu-2204.zip
+          mv ncnn-*-ubuntu-2204 ncnn
 
   android-build:
     runs-on: ubuntu-latest
@@ -61,9 +63,10 @@ jobs:
 
       - name: Unzip
         shell: bash
+        working-directory: ./native
         run: |
-          unzip ncnn-*-android-vulkan.zip -d ./native/ncnn
-          ls -l ./native/ncnn
+          unzip ncnn-*-android-vulkan.zip
+          mv ncnn-*-android-vulkan ncnn
 
       - name: Install Android NDK
         uses: nttld/setup-ndk@v1.2.0
@@ -96,6 +99,7 @@ jobs:
 
       - name: Unzip
         shell: bash
+        working-directory: ./native
         run: |
-          unzip ncnn-*-macos-vulkan.zip -d ./native/ncnn
-          ls -l ./native/ncnn
+          unzip ncnn-*-macos-vulkan.zip
+          mv ncnn-*-macos-vulkan ncnn
